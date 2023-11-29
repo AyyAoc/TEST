@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+
+  <h1>Weather App</h1>
+
+  <form action="/" method="post">
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city" required>
+
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" required>
+
+    <button type="submit">Get Weather</button>
+  </form>
+
+  <% if (locals.temp || locals.weather || locals.time) { %>
+    <h2>City: <%=place  %> Time: <%=time %></h2>
+    <h2>Weather: <%=weather %></h2>
+    <h2>Temperature: <%=temp.toFixed(2) %>°C</h2>
+  <% } %>
+
+</body>
+</html>
